@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { isClient, useWindowScroll } from '@vueuse/core'
-import { computed } from 'vue'
+import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { getDocumentElement, getWindow } from '../shared/browser'
 
@@ -9,29 +9,47 @@ const { y } = useWindowScroll()
 
 const showBackToTop = computed(() => y.value > 120)
 
-const scrollPercentage = computed(() => {
+const radius = 24
+const circumference = 2 * Math.PI * radius
+
+const strokeOffset = ref(circumference)
+let rafId: number | undefined
+
+function updateStrokeOffset() {
   if (!isClient)
-    return 0
+    return
 
   const root = getDocumentElement()
   const currentWindow = getWindow()
 
   if (!root || !currentWindow)
-    return 0
+    return
 
   const maxScroll = root.scrollHeight - currentWindow.innerHeight
-  if (maxScroll <= 0)
-    return 0
+  if (maxScroll <= 0) {
+    strokeOffset.value = circumference
+    return
+  }
 
-  return Math.min(1, Math.max(0, y.value / maxScroll))
+  const percentage = Math.min(1, Math.max(0, y.value / maxScroll))
+  const next = (1 - percentage) * circumference
+  // 只在值变化时更新，避免无谓的响应式触发
+  if (Math.abs(strokeOffset.value - next) > 0.5)
+    strokeOffset.value = next
+}
+
+function tick() {
+  updateStrokeOffset()
+  rafId = requestAnimationFrame(tick)
+}
+
+onMounted(() => {
+  rafId = requestAnimationFrame(tick)
 })
 
-const radius = 24
-const circumference = 2 * Math.PI * radius
-
-const strokeOffset = computed(() => {
-  const offset = (1 - scrollPercentage.value) * circumference
-  return offset < 0 ? 0 : offset
+onBeforeUnmount(() => {
+  if (rafId !== undefined)
+    cancelAnimationFrame(rafId)
 })
 
 function backToTop() {
@@ -169,6 +187,6 @@ function backToTop() {
   stroke-linecap: round;
   transform: rotate(-90deg);
   transform-origin: 50% 50%;
-  transition: stroke-dashoffset 260ms ease;
+  transition: stroke-dashoffset 120ms linear;
 }
 </style>
