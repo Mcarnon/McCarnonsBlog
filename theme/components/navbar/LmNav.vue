@@ -21,49 +21,52 @@ const homeItem = computed(() => themeConfig.value.navbar.find(item => item.link 
   <nav
     class="lm-nav flex flex-col w-full transition-transform duration-250 ease-in-out relative"
   >
-    <div class="px-4 py-2 flex gap-3 w-full items-center sm:px-5">
-      <span class="hidden md:contents">
-        <RouterLink
-          to="/"
-          class="lm-nav-home"
-        >
+    <!-- 移动端：保持原始样式 -->
+    <div class="px-4 py-2 flex gap-3 w-full items-center sm:px-5 md:hidden">
+      <LmNavBrand />
+      <LmNavTools
+        :drawer-open="props.drawerOpen"
+        @open-search="emit('openSearch')"
+        @toggle-mobile-drawer="emit('toggleMobileDrawer')"
+      />
+    </div>
+
+    <!-- 桌面端：首页文字 + 汉堡 + 工具 -->
+    <div class="px-4 py-2 hidden md:flex gap-3 w-full items-center sm:px-5">
+      <RouterLink
+        to="/"
+        class="lm-nav-home"
+      >
+        <span
+          v-if="homeItem?.icon"
+          class="lm-nav-home__icon"
+          :class="homeItem.icon"
+        />
+        <span>{{ homeItem?.text }}</span>
+      </RouterLink>
+
+      <button
+        type="button"
+        class="lm-nav-desktop-hamburger"
+        :aria-expanded="props.desktopDrawerOpen"
+        aria-label="Toggle navigation menu"
+        @click="emit('toggleDesktopDrawer')"
+      >
+        <span class="lm-nav-desktop-hamburger-lines">
           <span
-            v-if="homeItem?.icon"
-            class="lm-nav-home__icon"
-            :class="homeItem.icon"
+            class="lm-nav-desktop-hamburger-line"
+            :class="[props.desktopDrawerOpen ? 'translate-y-[5px] rotate-45 w-4' : 'w-4']"
           />
-          <span>{{ homeItem?.text }}</span>
-        </RouterLink>
-      </span>
-
-      <span class="md:hidden">
-        <LmNavBrand />
-      </span>
-
-      <span class="hidden md:contents">
-        <button
-          type="button"
-          class="lm-nav-desktop-hamburger"
-          :aria-expanded="props.desktopDrawerOpen"
-          aria-label="Toggle navigation menu"
-          @click="emit('toggleDesktopDrawer')"
-        >
-          <span class="lm-nav-desktop-hamburger-lines">
-            <span
-              class="lm-nav-desktop-hamburger-line"
-              :class="[props.desktopDrawerOpen ? 'translate-y-[5px] rotate-45 w-4' : 'w-4']"
-            />
-            <span
-              class="lm-nav-desktop-hamburger-line"
-              :class="[props.desktopDrawerOpen ? 'opacity-0' : 'w-4']"
-            />
-            <span
-              class="lm-nav-desktop-hamburger-line"
-              :class="[props.desktopDrawerOpen ? '-translate-y-[5px] -rotate-45 w-4' : 'w-4']"
-            />
-          </span>
-        </button>
-      </span>
+          <span
+            class="lm-nav-desktop-hamburger-line"
+            :class="[props.desktopDrawerOpen ? 'opacity-0' : 'w-4']"
+          />
+          <span
+            class="lm-nav-desktop-hamburger-line"
+            :class="[props.desktopDrawerOpen ? '-translate-y-[5px] -rotate-45 w-4' : 'w-4']"
+          />
+        </span>
+      </button>
 
       <LmNavTools
         :drawer-open="props.drawerOpen"
