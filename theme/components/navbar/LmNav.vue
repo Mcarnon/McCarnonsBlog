@@ -22,7 +22,7 @@ const homeItem = computed(() => themeConfig.value.navbar.find(item => item.link 
     class="lm-nav flex flex-col w-full transition-transform duration-250 ease-in-out relative"
   >
     <!-- 移动端：首页文字 + 工具 -->
-    <div class="px-4 py-2 flex gap-3 w-full items-center sm:px-5 md:hidden">
+    <div class="px-4 py-3 flex gap-3 w-full items-center sm:px-5 md:hidden">
       <RouterLink
         to="/"
         class="lm-nav-home"
@@ -42,7 +42,7 @@ const homeItem = computed(() => themeConfig.value.navbar.find(item => item.link 
     </div>
 
     <!-- 桌面端：首页文字 + 汉堡 + 工具 -->
-    <div class="px-4 py-2 hidden md:flex gap-3 w-full items-center sm:px-5">
+    <div class="px-4 py-3 hidden md:flex gap-3 w-full items-center sm:px-5">
       <RouterLink
         to="/"
         class="lm-nav-home"
@@ -101,22 +101,22 @@ const homeItem = computed(() => themeConfig.value.navbar.find(item => item.link 
 }
 
 .lm-nav-home {
-  @apply text-sm font-700 text-[var(--lm-c-text-primary)] no-underline transition-colors duration-200 hover:text-[var(--lm-c-brand)] inline-flex items-center gap-1.5;
+  @apply text-base font-700 text-[var(--lm-c-text-primary)] no-underline transition-colors duration-200 hover:text-[var(--lm-c-brand)] inline-flex items-center gap-1.5;
 }
 
 .lm-nav-home__icon {
-  @apply inline-block text-base opacity-80;
+  @apply inline-block text-lg opacity-80;
 }
 
 .lm-nav-desktop-hamburger {
-  @apply inline-flex h-9 w-9 items-center justify-center rounded-full border border-[var(--lm-c-border)] bg-[var(--lm-c-bg-glass)] text-[var(--lm-c-text-primary)] transition-[border-color,background-color,transform] duration-220 ease-out hover:border-[var(--lm-c-brand)] hover:-translate-y-0.25;
+  @apply inline-flex h-10 w-10 items-center justify-center rounded-full text-[var(--lm-c-text-primary)] transition-[color,transform] duration-220 ease-out hover:text-[var(--lm-c-brand)] hover:-translate-y-0.25;
 }
 
 .lm-nav-desktop-hamburger-lines {
-  @apply flex flex-col items-center justify-center gap-[3px];
+  @apply flex flex-col items-center justify-center gap-[4px];
 }
 
 .lm-nav-desktop-hamburger-line {
-  @apply block h-[1.75px] origin-center rounded-full bg-[var(--lm-c-text-primary)] transition-all duration-250 ease-in-out;
+  @apply block h-[2px] origin-center rounded-full bg-[var(--lm-c-text-primary)] transition-all duration-250 ease-in-out;
 }
 </style>

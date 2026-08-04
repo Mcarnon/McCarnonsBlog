@@ -43,7 +43,7 @@ const hamburgerLines = computed(() => {
       :aria-label="t('button.openSearch')"
       @click="emit('openSearch')"
     >
-      <div i-ri-search-line />
+      <div i-ri-search-line text-xl />
     </button>
 
     <button
@@ -53,7 +53,7 @@ const hamburgerLines = computed(() => {
       :aria-label="t('button.toggleDark')"
       @click="appStore.toggleDarkWithTransition"
     >
-      <div :class="darkToggleIcon" />
+      <div :class="darkToggleIcon" text-xl />
     </button>
 
     <button
@@ -86,19 +86,18 @@ const hamburgerLines = computed(() => {
 }
 
 .lm-nav-tools__button {
-  @apply inline-flex h-9 w-9 items-center justify-center rounded-full border border-[var(--lm-c-border)] bg-[var(--lm-c-bg-glass)] text-[var(--lm-c-text-primary)] transition-[border-color,background-color,transform] duration-220 ease-out hover:border-[var(--lm-c-brand)] hover:-translate-y-0.25;
+  @apply inline-flex h-10 w-10 items-center justify-center rounded-full text-[var(--lm-c-text-primary)] transition-[color,transform] duration-220 ease-out hover:text-[var(--lm-c-brand)] hover:-translate-y-0.25;
 }
 
 .lm-nav-tools__menu-button {
-  @apply inline-flex h-9 w-9 items-center justify-center rounded-full border border-[var(--lm-c-border)] text-[var(--lm-c-text-primary)] transition-[border-color,background-color,transform] duration-220 ease-out hover:border-[var(--lm-c-brand)] hover:-translate-y-0.25 md:hidden;
-  background: color-mix(in srgb, var(--lm-c-bg-glass) 72%, transparent);
+  @apply inline-flex h-10 w-10 items-center justify-center rounded-full text-[var(--lm-c-text-primary)] transition-[color,transform] duration-220 ease-out hover:text-[var(--lm-c-brand)] hover:-translate-y-0.25 md:hidden;
 }
 
 .lm-nav-tools__menu-lines {
-  @apply flex flex-col items-center justify-center gap-[3px];
+  @apply flex flex-col items-center justify-center gap-[4px];
 }
 
 .lm-nav-tools__menu-line {
-  @apply block h-[1.75px] origin-center rounded-full bg-[var(--lm-c-text-primary)] transition-all duration-250 ease-in-out;
+  @apply block h-[2px] origin-center rounded-full bg-[var(--lm-c-text-primary)] transition-all duration-250 ease-in-out;
 }
 </style>
