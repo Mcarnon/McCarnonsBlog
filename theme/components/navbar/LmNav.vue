@@ -24,7 +24,7 @@ const homeItem = computed(() => themeConfig.value.navbar.find(item => item.link 
     <div class="px-4 py-2 flex gap-3 w-full items-center sm:px-5">
       <RouterLink
         to="/"
-        class="lm-nav-home"
+        class="lm-nav-home hidden md:inline-flex"
       >
         <span
           v-if="homeItem?.icon"
@@ -33,6 +33,8 @@ const homeItem = computed(() => themeConfig.value.navbar.find(item => item.link 
         />
         <span>{{ homeItem?.text }}</span>
       </RouterLink>
+
+      <LmNavBrand class="md:hidden" />
 
       <button
         type="button"

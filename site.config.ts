@@ -4,7 +4,7 @@ import { defineSiteConfig } from 'valaxy'
 export default defineSiteConfig({
   lang: 'zh-CN',
   timezone: 'Asia/Shanghai',
-  title: 'Ciallo～(∠・ω< )⌒★',
+  title: '(∠・ω< )⌒★',
   subtitle: 'Welcome to McCarnon\'s White Space!',
   url: 'https://mccarnon.top/',
   favicon: '/images/favicon.ico',
