@@ -82,7 +82,7 @@ const hamburgerLines = computed(() => {
 
 <style lang="scss" scoped>
 .lm-nav-tools {
-  @apply ml-auto flex items-center gap-2 md:ml-3;
+  @apply ml-auto flex items-center gap-2;
 }
 
 .lm-nav-tools__button {

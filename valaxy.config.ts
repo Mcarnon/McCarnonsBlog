@@ -53,7 +53,7 @@ export default defineConfig<ThemeConfig>({
 
     // 导航栏
     navbar: [
-      { text: '首页', link: '/', icon: 'i-ri-home-line' },
+      { text: '', link: '/', icon: 'i-ri-home-line' },
       { text: '归档', link: '/archives/', icon: 'i-ri-archive-line' },
       { text: '分类', link: '/categories/', icon: 'i-ri-folder-line' },
       { text: '标签', link: '/tags/', icon: 'i-ri-price-tag-3-line' },

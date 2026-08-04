@@ -21,11 +21,17 @@ export function useLayoutShell() {
 
   const navItems = computed(() => themeConfig.value.navbar.filter(item => item.text))
   const { isOpen: isDrawerOpen, close: closeDrawer, toggle: toggleDrawer } = useMobileDrawer()
+  const { isOpen: isDesktopDrawerOpen, close: closeDesktopDrawer, toggle: toggleDesktopDrawer } = useMobileDrawer()
   const { isOpen: isSearchOpen, open: openSearch, close: closeSearch } = useSearchModal()
   const { visible } = useNavbarVisibility(themeConfig.value.navbarOptions?.autoHide ?? true)
   const isHomeLayout = computed(() => route.meta.layout === 'home')
 
-  // Surface 层的上边界只取决于“首页 Hero 舞台高度”这一配置语义，
+  // 桌面端抽屉中的导航项不包含首页（首页已在品牌区展示）
+  const desktopNavItems = computed(() =>
+    navItems.value.filter(item => item.link !== '/'),
+  )
+
+  // Surface 层的上边界只取决于"首页 Hero 舞台高度"这一配置语义，
   // 因此直接用配置值生成内联样式，让 SSR 产物与水合后完全一致。
   // 相比运行时测量 Hero bounding 再写 CSS 变量，这里没有首帧跳变，也不产生布局偏移。
   const pageSurfaceStyle = computed<CSSProperties>(() => ({
@@ -38,9 +44,9 @@ export function useLayoutShell() {
   })
 
   // 头部壳层的显示状态必须同时考虑 drawer/search 的打开状态。
-  // 否则导航虽然被滚动逻辑隐藏了，但抽屉或搜索层还在屏幕上，会出现“壳层和浮层脱节”。
+  // 否则导航虽然被滚动逻辑隐藏了，但抽屉或搜索层还在屏幕上，会出现"壳层和浮层脱节"。
   const headerVisible = computed(() => {
-    return isDrawerOpen.value || isSearchOpen.value || visible.value
+    return isDrawerOpen.value || isDesktopDrawerOpen.value || isSearchOpen.value || visible.value
   })
 
   watch(
@@ -51,16 +57,30 @@ export function useLayoutShell() {
     { immediate: true },
   )
 
+  // 移动端打开时关闭桌面抽屉，反之亦然
+  watch(isDrawerOpen, (open) => {
+    if (open && isDesktopDrawerOpen.value)
+      closeDesktopDrawer()
+  })
+  watch(isDesktopDrawerOpen, (open) => {
+    if (open && isDrawerOpen.value)
+      closeDrawer()
+  })
+
   return {
     closeDrawer,
+    closeDesktopDrawer,
     closeSearch,
+    desktopNavItems,
     headerVisible,
+    isDesktopDrawerOpen,
     isDrawerOpen,
     isSearchOpen,
     navItems,
     openSearch,
     pageSurfaceStyle,
     showGlobalNotice,
+    toggleDesktopDrawer,
     toggleDrawer,
   }
 }

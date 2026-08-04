@@ -12,14 +12,18 @@ const router = useRouter()
 const { t } = useI18n()
 const {
   closeDrawer,
+  closeDesktopDrawer,
   closeSearch,
+  desktopNavItems,
   headerVisible,
+  isDesktopDrawerOpen,
   isDrawerOpen,
   isSearchOpen,
   navItems,
   openSearch,
   pageSurfaceStyle,
   showGlobalNotice,
+  toggleDesktopDrawer,
   toggleDrawer,
 } = useLayoutShell()
 
@@ -30,12 +34,22 @@ useHomePaginationScrollBehavior(router)
   <div class="min-h-screen antialiased relative isolate">
     <LmBackgroundLayer />
 
+    <!-- 移动端抽屉遮罩 -->
     <button
       v-if="isDrawerOpen"
       type="button"
       class="lm-mobile-drawer-backdrop"
       :aria-label="t('button.closeMobileNav')"
       @click="closeDrawer"
+    />
+
+    <!-- 桌面端抽屉遮罩 -->
+    <button
+      v-if="isDesktopDrawerOpen"
+      type="button"
+      class="lm-desktop-drawer-backdrop hidden md:block"
+      :aria-label="t('button.closeMobileNav')"
+      @click="closeDesktopDrawer"
     />
 
     <div
@@ -45,8 +59,9 @@ useHomePaginationScrollBehavior(router)
       <div class="w-full">
         <LmNav
           :drawer-open="isDrawerOpen"
-          :items="navItems"
+          :desktop-drawer-open="isDesktopDrawerOpen"
           @toggle-mobile-drawer="toggleDrawer"
+          @toggle-desktop-drawer="toggleDesktopDrawer"
           @open-search="openSearch"
         />
         <LmMobileDrawer
@@ -57,6 +72,14 @@ useHomePaginationScrollBehavior(router)
         />
       </div>
     </div>
+
+    <!-- 桌面端抽屉 -->
+    <LmDesktopDrawer
+      :open="isDesktopDrawerOpen"
+      :items="desktopNavItems"
+      @close="closeDesktopDrawer"
+      @open-search="openSearch"
+    />
 
     <LmSearchModal
       :open="isSearchOpen"
@@ -86,12 +109,17 @@ useHomePaginationScrollBehavior(router)
   @apply fixed inset-0 z-[var(--lm-z-drawer-backdrop)] border-0 bg-transparent p-0 md:hidden;
 }
 
+.lm-desktop-drawer-backdrop {
+  @apply fixed inset-0 z-[var(--lm-z-drawer-backdrop)] border-0 p-0;
+  background: rgba(0, 0, 0, 0.35);
+}
+
 .lm-global-notice {
   @apply relative z-[var(--lm-z-content)] mx-auto w-full max-w-6xl pt-12 px-4 sm:px-6 xl:px-0;
 }
 
 .lm-page-surface-layer {
-  // 用文档流内的 absolute 定位代替“fixed + JS 追踪 Hero 底部”：
+  // 用文档流内的 absolute 定位代替"fixed + JS 追踪 Hero 底部"：
   // 边界直接锚在内容坐标上，滚动时自然跟随 Hero，
   // 既不需要监听滚动，也不会因为移动 fixed 元素而产生累计布局偏移（CLS）。
   // top 由内联样式提供（首页为 Hero 高度，其余页面为 0），SSR 阶段即已确定。

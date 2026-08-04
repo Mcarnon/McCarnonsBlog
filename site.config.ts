@@ -1,10 +1,11 @@
+import { SpaceNode } from 'katex/src/mathMLTree.js'
 import { defineSiteConfig } from 'valaxy'
 
 export default defineSiteConfig({
   lang: 'zh-CN',
   timezone: 'Asia/Shanghai',
-  title: '1',
-  subtitle: '2',
+  title: 'Ciallo～(∠・ω< )⌒★',
+  subtitle: 'Welcome to McCarnon\'s White Space!',
   url: 'https://mccarnon.top/',
   favicon: '/images/favicon.ico',
   author: {
