@@ -27,7 +27,7 @@ export default defineConfig<ThemeConfig>({
         //   'https://api.horosama.com/random.php',
         // ],
         // random: true,
-        overlayOpacity: 0.75,
+        overlayOpacity: 0,
       },
     },
 
