@@ -1,0 +1,111 @@
+.markdown-body {
+  table {
+    display: table;
+    width: 100%;
+    min-width: 100%;
+    table-layout: auto;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 1px solid color-mix(in srgb, var(--lm-c-brand) 10%, var(--lm-c-border));
+    border-radius: 0.5rem;
+    background: color-mix(in srgb, var(--lm-surface-reading-bg) 78%, transparent);
+  }
+
+  thead {
+    background: color-mix(in srgb, var(--lm-c-brand-soft) 82%, transparent);
+  }
+
+  th,
+  td {
+    border-bottom: 1px solid var(--lm-c-border);
+    padding: 0.8rem 0.95rem;
+    text-align: left;
+    vertical-align: top;
+  }
+
+  th + th,
+  td + td {
+    border-left: 1px solid var(--lm-c-border);
+  }
+
+  th {
+    color: var(--lm-c-text-primary);
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  td {
+    color: var(--lm-c-text-secondary);
+  }
+
+  tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  tbody tr:nth-child(2n) {
+    background: color-mix(in srgb, var(--lm-c-brand) 4%, transparent);
+  }
+
+  tbody tr:hover {
+    background: color-mix(in srgb, var(--lm-c-brand) 8%, transparent);
+  }
+
+  img,
+  video {
+    display: block;
+    max-width: 100%;
+    max-height: min(70vh, 42rem);
+    height: auto;
+    margin: 1rem auto;
+    border-radius: 0.25rem;
+    border: 1px solid color-mix(in srgb, var(--lm-c-brand) 10%, var(--lm-c-border));
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+  }
+
+  audio {
+    display: block;
+    width: min(100%, 36rem);
+    border-radius: var(--lm-radius-full);
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+  }
+
+  img:not([align]),
+  video {
+    clear: both;
+  }
+
+  img[align='left'] {
+    float: left;
+    margin: 0.4rem 1.1rem 1rem 0;
+  }
+
+  img[align='right'] {
+    float: right;
+    margin: 0.4rem 0 1rem 1.1rem;
+  }
+
+  p:has(> img:not([align])) {
+    clear: both;
+  }
+
+  p > img:not([align]) + em {
+    display: block;
+    margin-top: 0.65rem;
+    text-align: center;
+    font-size: 0.94rem;
+    color: var(--lm-c-text-secondary);
+  }
+
+  figure {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    align-items: center;
+  }
+
+  figcaption {
+    font-size: 0.92rem;
+    color: var(--lm-c-text-muted);
+    text-align: center;
+  }
+}

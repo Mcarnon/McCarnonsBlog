@@ -1,0 +1,41 @@
+{
+  "name": "valaxy-theme-lolimeow",
+  "type": "module",
+  "version": "1.1.6",
+  "author": {
+    "email": "Andreas99514@outlook.com",
+    "name": "Yoyo514",
+    "url": "https://blog.yoyo514.top"
+  },
+  "homepage": "https://github.com/Yoyo-514/valaxy-theme-lolimeow",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Yoyo-514/valaxy-theme-lolimeow"
+  },
+  "keywords": [
+    "valaxy",
+    "theme",
+    "lolimeow",
+    "vue"
+  ],
+  "exports": {
+    ".": "./index.ts",
+    "./*": "./*",
+    "./client": "./client/index.ts",
+    "./theme": "./types/index.d.ts",
+    "./types": "./types/index.d.ts"
+  },
+  "main": "client/index.ts",
+  "module": "client/index.ts",
+  "types": "types/index.d.ts",
+  "dependencies": {
+    "@iconify-json/ant-design": "catalog:",
+    "@iconify-json/simple-icons": "catalog:",
+    "@unhead/vue": "catalog:",
+    "@vueuse/core": "catalog:"
+  },
+  "devDependencies": {
+    "valaxy": "catalog:",
+    "valaxy-addon-waline": "catalog:"
+  }
+}

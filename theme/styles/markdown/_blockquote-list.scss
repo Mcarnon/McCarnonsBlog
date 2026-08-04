@@ -1,0 +1,80 @@
+.markdown-body {
+  blockquote {
+    margin: 0.75rem 0;
+    padding: 0.25rem 1.1rem;
+    border-left: 3px solid color-mix(in srgb, var(--lm-c-brand) 52%, white);
+    background: color-mix(in srgb, var(--lm-c-brand-soft) 68%, transparent);
+
+    p,
+    ul,
+    ol {
+      margin: 0.45rem 0;
+      color: var(--lm-c-text-secondary);
+    }
+
+    > :first-child {
+      margin-top: 0;
+    }
+
+    > :last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  ul,
+  ol {
+    padding-left: 1.35rem;
+  }
+
+  ul {
+    list-style: disc;
+  }
+
+  ol {
+    list-style: decimal;
+  }
+
+  li {
+    margin: 0.42rem 0;
+    color: var(--lm-c-text-primary);
+
+    &::marker {
+      color: color-mix(in srgb, var(--lm-c-brand) 42%, var(--lm-c-text-muted));
+    }
+  }
+
+  li > p {
+    margin-bottom: 0;
+  }
+
+  li > ul,
+  li > ol {
+    margin-top: 0.45rem;
+    margin-bottom: 0.45rem;
+  }
+
+  input[type='checkbox'] {
+    accent-color: var(--lm-c-brand-strong);
+  }
+
+  .contains-task-list,
+  .task-list-container {
+    padding-left: 0;
+    list-style: none;
+  }
+
+  .task-list-item > .contains-task-list,
+  .task-list-item > .task-list-container {
+    padding-left: 1rem;
+  }
+
+  .task-list-item {
+    display: list-item;
+    list-style: none;
+
+    input {
+      margin: 0 0.5rem 0 0;
+      vertical-align: middle;
+    }
+  }
+}

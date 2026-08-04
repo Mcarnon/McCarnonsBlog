@@ -1,21 +1,37 @@
 {
-  "name": "valaxy-blog",
   "type": "module",
-  "version": "0.0.0",
   "private": true,
+  "homepage": "https://lolimeow.yoyo514.top",
   "scripts": {
-    "build": "npm run build:ssg",
+    "build": "valaxy build --ssg",
     "build:spa": "valaxy build",
     "build:ssg": "valaxy build --ssg",
+    "ci:publish": "pnpm -r publish --access public --no-git-checks",
     "dev": "valaxy",
     "rss": "valaxy rss",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "docs:build": "pnpm -C docs run build",
+    "docs:dev": "pnpm -C docs run dev",
+    "docs:serve": "pnpm -C docs run serve",
+    "check:vue-overrides": "node ./scripts/check-vue-overrides.mjs",
+    "fix:vue-overrides": "node ./scripts/check-vue-overrides.mjs --write",
+    "lint": "eslint .",
+    "release": "cd theme && git add -A && bumpp --all",
+    "typecheck": "node ./scripts/typecheck.mjs"
   },
   "dependencies": {
-    "valaxy": "1.0.0-rc.3",
-    "valaxy-theme-yun": "1.0.0-rc.3"
+    "valaxy": "catalog:",
+    "valaxy-addon-waline": "catalog:",
+    "valaxy-theme-lolimeow": "workspace:*"
   },
   "devDependencies": {
-    "typescript": "^5.9.3"
+    "@antfu/eslint-config": "catalog:",
+    "@unocss/eslint-plugin": "catalog:",
+    "bumpp": "catalog:",
+    "eslint": "catalog:",
+    "eslint-plugin-format": "catalog:",
+    "typescript": "catalog:",
+    "vitest": "catalog:",
+    "vue-tsc": "catalog:"
   }
 }

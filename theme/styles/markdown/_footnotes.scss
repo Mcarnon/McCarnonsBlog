@@ -1,0 +1,32 @@
+.markdown-body {
+  sup,
+  sub {
+    font-size: 0.78em;
+  }
+
+  .footnotes {
+    margin-top: 2.4rem;
+    padding-top: 1rem;
+    border-top: 1px solid color-mix(in srgb, var(--lm-c-brand) 12%, var(--lm-c-border));
+    color: var(--lm-c-text-secondary);
+    font-size: 0.95rem;
+
+    p,
+    li {
+      color: var(--lm-c-text-secondary);
+    }
+  }
+
+  .footnote-ref {
+    margin-left: 0.08rem;
+    font-weight: 700;
+  }
+
+  .footnotes li[id],
+  [id^='fnref'],
+  [id^='user-content-fnref'],
+  [id^='fn'],
+  [id^='user-content-fn'] {
+    scroll-margin-top: 45vh;
+  }
+}

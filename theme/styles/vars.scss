@@ -1,0 +1,145 @@
+@use 'sass:map';
+
+$lm-c-brand: #66ccff !default;
+
+// common
+$common: (
+  // 主题色
+  'c-brand': $lm-c-brand,
+  'c-brand-strong': color-mix(in srgb, #000 28%, var(--lm-c-brand)),
+  'c-brand-subtle': color-mix(in srgb, var(--lm-c-brand) 10%, transparent),
+  'c-border-accent': color-mix(in srgb, var(--lm-c-brand) 14%, var(--lm-c-border)),
+  // 模糊原子层级
+  'blur-sm': 12px,
+  'blur-md': 16px,
+  'blur-lg': 20px,
+  // 语义化模糊层级只引用原子层级，避免维护两套数值
+  'blur-panel': var(--lm-blur-sm),
+  'blur-nav': var(--lm-blur-md),
+  'blur-modal': var(--lm-blur-lg),
+  // 阴影
+  'shadow-glass': 0 2px 8px rgba(0, 0, 0, 0.06),
+  'shadow-elevated': 0 4px 16px rgba(15, 23, 42, 0.1),
+  // 圆角
+  'radius-xs': 4px,
+  'radius-sm': 8px,
+  'radius-md': 12px,
+  'radius-lg': 16px,
+  'radius-full': 9999px,
+
+  // 间距
+  'spacing-2': 2px,
+  'spacing-4': 4px,
+  'spacing-8': 8px,
+  'spacing-12': 12px,
+  'spacing-16': 16px,
+  'spacing-24': 24px,
+  'spacing-32': 32px
+) !default;
+$common: map.merge((), $common);
+
+// palette
+$light: (
+  'c-brand-soft': color-mix(in srgb, var(--lm-c-brand) 14%, white),
+  'c-brand-border': color-mix(in srgb, var(--lm-c-brand) 44%, white),
+  // 文字
+  'c-text-primary': #111111,
+  'c-text-secondary': #48484a,
+  'c-text-muted': #8e8e93,
+
+  // 背景
+  'c-bg-base': #f2f2f7,
+  'c-bg-glass': rgba(249, 251, 255, 0.82),
+  'c-bg-glass-hover': rgba(255, 255, 255, 0.9),
+  // 覆盖整页背景图的基础 overlay
+  'c-overlay-base': color-mix(in srgb, var(--lm-c-brand) 8%, rgba(242, 247, 255, 0.9)),
+  // 品牌氛围层
+  'c-overlay-tint': color-mix(in srgb, var(--lm-c-brand) 24%, transparent),
+  // 边框 & 分隔线
+  'c-border': rgba(0, 0, 0, 0.08),
+  'c-border-hover': rgba(0, 0, 0, 0.12),
+  'c-divider': rgba(0, 0, 0, 0.06),
+  // 链接
+  'c-link': var(--lm-c-brand-strong),
+  'c-link-hover': var(--lm-c-brand),
+  // 行内代码
+  'c-code-inline-text': var(--lm-c-brand-strong),
+  'c-code-inline-bg': color-mix(in srgb, var(--lm-c-brand) 16%, transparent),
+  // 状态色
+  'c-success': #34c759,
+  'c-success-soft': #e6f9ec,
+  'c-warning': #ffcc00,
+  'c-warning-soft': #fff8e0,
+  'c-danger': #ff3b30,
+  'c-danger-soft': #ffecec,
+  'c-info': color-mix(in srgb, #fff 18%, var(--lm-c-brand)),
+  'c-info-soft': color-mix(in srgb, var(--lm-c-info) 14%, white),
+) !default;
+$light: map.merge((), $light);
+
+$dark: (
+  'c-brand-strong': color-mix(in srgb, #fff 24%, var(--lm-c-brand)),
+  'c-brand-soft': color-mix(in srgb, var(--lm-c-brand) 18%, #050814),
+  'c-brand-border': color-mix(in srgb, var(--lm-c-brand) 72%, transparent),
+  // 文字
+  'c-text-primary': #f9fafb,
+  'c-text-secondary': #c7c7cc,
+  'c-text-muted': #9696a8,
+
+  // 背景
+  'c-bg-base': #0b0b10,
+  'c-bg-glass': rgba(5, 8, 22, 0.82),
+  'c-bg-glass-hover': rgba(15, 18, 32, 0.9),
+  // 覆盖整页背景图的基础 overlay
+  'c-overlay-base': color-mix(in srgb, var(--lm-c-brand) 8%, rgba(4, 8, 24, 0.84)),
+  // 品牌氛围层
+  'c-overlay-tint': color-mix(in srgb, var(--lm-c-brand) 28%, transparent),
+  // 边框 & 分隔线
+  'c-border': rgba(255, 255, 255, 0.08),
+  'c-border-hover': rgba(255, 255, 255, 0.15),
+  'c-divider': rgba(255, 255, 255, 0.06),
+  // 链接
+  'c-link': var(--lm-c-brand),
+  'c-link-hover': var(--lm-c-brand-strong),
+  // 行内代码
+  'c-code-inline-text': var(--lm-c-brand),
+  'c-code-inline-bg': color-mix(in srgb, var(--lm-c-brand) 20%, transparent),
+  // 状态色
+  'c-success': #30d158,
+  'c-success-soft': #0b2814,
+  'c-warning': #ffd60a,
+  'c-warning-soft': #2b2305,
+  'c-danger': #ff453a,
+  'c-danger-soft': #2a0b0b,
+  'c-info': color-mix(in srgb, #fff 24%, var(--lm-c-brand)),
+  'c-info-soft': color-mix(in srgb, var(--lm-c-info) 18%, #051320),
+) !default;
+$dark: map.merge((), $dark);
+
+$z-index: (
+  // 组件内部原子层级
+  'z-deep-behind': -2,
+  'z-behind': -1,
+  'z-base': 0,
+  'z-raised': 1,
+  'z-raised-high': 2,
+  // 页面壳层
+  'z-page-surface': 5,
+  'z-content': 10,
+  'z-floating': 20,
+  // 全局覆盖层
+  'z-dropdown': 100,
+  'z-sticky': 200,
+  'z-navbar': 300,
+  'z-drawer-backdrop': calc(var(--lm-z-navbar) - 1),
+  'z-overlay-trigger': 350,
+  'z-overlay-scrim': 380,
+  'z-overlay-panel': 390,
+  'z-sidebar': 400,
+  'z-drawer': 500,
+  'z-modal': 600,
+  'z-toast': 700,
+  'z-tooltip': 800,
+  'z-progress': 1024
+) !default;
+$z-index: map.merge((), $z-index);

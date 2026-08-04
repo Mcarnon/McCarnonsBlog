@@ -1,0 +1,18 @@
+@use 'valaxy/client/styles/mixins/index.scss' as *;
+
+@use 'valaxy/client/styles/common/code.scss' as *;
+@use 'valaxy/client/styles/common/markdown.scss' as *;
+
+@use 'valaxy/client/styles/components/code.scss' as *;
+@use 'valaxy/client/styles/components/code-group.scss' as *;
+@use 'valaxy/client/styles/components/custom-block.scss' as *;
+
+@use './base';
+@use './typography';
+@use './blockquote-list';
+@use './code';
+@use './table-media';
+@use './interactive';
+@use './custom-block';
+@use './footnotes';
+@use './dark';

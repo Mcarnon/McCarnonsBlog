@@ -1,0 +1,19 @@
+.link {
+  color: var(--lm-c-link);
+}
+
+html {
+  color: var(--lm-c-text-primary);
+}
+
+.lm-text {
+  color: var(--lm-c-text-primary);
+}
+
+.lm-empty-state {
+  @apply rounded-6 border border-dashed px-5 py-12 text-center text-sm leading-7;
+
+  border-color: var(--lm-c-border-accent);
+  color: var(--lm-c-text-secondary);
+  background: var(--lm-surface-empty-bg);
+}

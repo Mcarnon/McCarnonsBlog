@@ -1,0 +1,105 @@
+valaxy_theme_lolimeow: Valaxy 主题 LoliMeow
+
+statistics:
+  views: 浏览量
+  traffic: 站点访问量
+
+search:
+  label: 搜索
+  placeholder: 搜索文章、标签或分类...
+  loading: 正在检索...
+  no_results: 未找到相关结果
+  no_results_hint: 换个关键词或试试标签、分类名称
+  error_hint: 本地搜索数据加载失败。
+
+comment:
+  label: 评论区
+
+button:
+  home: 返回首页
+  back: 返回上一页
+  openSearch: 打开搜索
+  closeSearch: 关闭搜索
+  toggleDark: 切换深色模式
+  toggleMenu: 切换移动端导航
+  closeMobileNav: 关闭移动端导航
+  mobileNav: 移动端导航
+  backToTop: 返回顶部
+  scrollDown: 滚动到下一屏
+  closeNotice: 关闭公告
+  openToc: 打开文章目录
+  closeToc: 关闭文章目录
+
+footer:
+  powered: 由 {0} 驱动
+  theme: 主题
+
+notice:
+  label: 公告
+
+toc:
+  label: 文章目录
+  eyebrow: 本页目录
+  title: 文章目录
+
+pagination:
+  label: 分页
+  previous: 上一页
+  next: 下一页
+
+pages:
+  about:
+    title: 关于
+    profile: Profile
+    description: 记录想法、代码与日常。
+  archives:
+    title: 归档
+    empty: 这里还没有可展示的归档文章。
+    unknownYear: 未标注年份
+    countLabel: 篇
+    stats:
+      posts: 文章
+  categories:
+    title: 分类
+    empty: 这里还没有可展示的分类内容。
+    uncategorized: 未分类
+    postCountLabel: 篇文章
+    childCountLabel: 个子分类
+    stats:
+      categories: 分类
+      posts: 文章
+  tags:
+    title: 标签
+    empty: 这里还没有可展示的标签内容。
+    postCountLabel: 篇文章
+    stats:
+      tags: 标签
+      posts: 文章
+  projects:
+    title: 项目
+    empty: 这里还没有可展示的项目。
+    status:
+      active: 维护中
+      archived: 已归档
+      wip: 开发中
+    stats:
+      groups: 分组
+      projects: 项目
+      featured: 精选
+    actions:
+      visit: 访问
+      repo: 仓库
+      docs: 文档
+      demo: 演示
+  links:
+    title: 友情链接
+    empty: 这里还没有可展示的友链。
+    status:
+      idle: 未检测
+      checking: 检测中
+      online: 可访问
+      offline: 暂不可访问
+      unknown: 未知状态
+    stats:
+      groups: 分组
+      links: 伙伴

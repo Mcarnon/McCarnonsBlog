@@ -1,0 +1,45 @@
+html.dark {
+  .markdown-body {
+    --c-toc-link: var(--lm-c-text-secondary);
+
+    pre,
+    div[class*='language-'],
+    table,
+    img,
+    video,
+    iframe,
+    .mermaid,
+    audio {
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.24);
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .markdown-body {
+    font-size: 0.98rem;
+
+    h2 {
+      margin-top: 2.2rem;
+    }
+
+    h3 {
+      margin-top: 1.7rem;
+    }
+
+    th,
+    td {
+      padding: 0.72rem 0.8rem;
+    }
+
+    iframe {
+      min-height: 13rem;
+    }
+
+    img[align='left'],
+    img[align='right'] {
+      float: none;
+      margin: 1rem auto;
+    }
+  }
+}

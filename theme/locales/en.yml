@@ -1,0 +1,105 @@
+valaxy_theme_lolimeow: Valaxy Theme LoliMeow
+
+statistics:
+  views: Page views
+  traffic: Traffic
+
+search:
+  label: Search
+  placeholder: Search posts, tags, or categories...
+  loading: Searching...
+  no_results: No results found
+  no_results_hint: Try another keyword, tag, or category
+  error_hint: Failed to load local search data.
+
+comment:
+  label: Comments
+
+button:
+  home: Back Home
+  back: Go Back
+  openSearch: Open search
+  closeSearch: Close search
+  toggleDark: Toggle dark mode
+  toggleMenu: Toggle mobile navigation
+  closeMobileNav: Close mobile navigation
+  mobileNav: Mobile navigation
+  backToTop: Back to top
+  scrollDown: Scroll to next section
+  closeNotice: Close notice
+  openToc: Open table of contents
+  closeToc: Close table of contents
+
+footer:
+  powered: Powered by {0}
+  theme: Theme
+
+notice:
+  label: Notice
+
+toc:
+  label: Table of contents
+  eyebrow: On this page
+  title: Table of contents
+
+pagination:
+  label: Pagination
+  previous: Previous page
+  next: Next page
+
+pages:
+  about:
+    title: About
+    profile: Profile
+    description: Notes, code, and daily fragments.
+  archives:
+    title: Archives
+    empty: No archive entries are available yet.
+    unknownYear: Unknown Year
+    countLabel: posts
+    stats:
+      posts: Posts
+  categories:
+    title: Categories
+    empty: No categories are available yet.
+    uncategorized: Uncategorized
+    postCountLabel: posts
+    childCountLabel: child categories
+    stats:
+      categories: Categories
+      posts: Posts
+  tags:
+    title: Tags
+    empty: No tags are available yet.
+    postCountLabel: posts
+    stats:
+      tags: Tags
+      posts: Posts
+  projects:
+    title: Projects
+    empty: No projects are available yet.
+    status:
+      active: Active
+      archived: Archived
+      wip: Work in progress
+    stats:
+      groups: Groups
+      projects: Projects
+      featured: Featured
+    actions:
+      visit: Visit
+      repo: Repo
+      docs: Docs
+      demo: Demo
+  links:
+    title: Friendly Links
+    empty: No links are available yet.
+    status:
+      idle: Not checked
+      checking: Checking
+      online: Reachable
+      offline: Unreachable
+      unknown: Unknown status
+    stats:
+      groups: Groups
+      links: Friends

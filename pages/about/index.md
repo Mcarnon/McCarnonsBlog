@@ -1,15 +1,19 @@
 ---
-title: 关于我
+layout: about
+title: 关于
+description: 这里是一个用来展示主题 about 页面结构的示例。
 ---
 
-I am developing [Valaxy](https://github.com/YunYouJun/valaxy) - Next Generation Static Blog Framework.
+## About
 
-If you like it, you can sponsor me in [GitHub](https://github.com/sponsors/YunYouJun) or [www.yunyoujun.cn/sponsors/](https://www.yunyoujun.cn/sponsors/).
+这里可以写个人介绍、项目说明、博客准则，或者任何普通 Markdown 内容。
 
----
+### 当前关注
 
-我正在开发 [Valaxy](https://github.com/YunYouJun/valaxy) - 下一代静态博客框架。
+- 主题设计与前端体验
+- Valaxy 主题开发
+- 轻量、清晰、可维护的页面结构
 
-如果你喜欢它，你可以在 [GitHub](https://github.com/sponsors/YunYouJun) 或 [www.yunyoujun.cn/sponsors/](https://www.yunyoujun.cn/sponsors/) 赞助我。
+### 联系方式
 
-Check out the [Valaxy | GitHub](https://github.com/YunYouJun/valaxy) for more details.
+上方社交入口来自站点级 `social` 配置；正文内容则完全由本页 Markdown 控制。

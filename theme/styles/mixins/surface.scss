@@ -1,0 +1,63 @@
+@use './glass' as *;
+
+/**
+ * 导航条 surface
+ *
+ * 导航是高频可见层，需要：
+ * 1. 比正文卡片更轻
+ * 2. 比普通 panel 更稳定
+ * 3. 在随机图背景上也能压住视觉噪音
+ */
+@mixin lm-surface-nav(
+  $background: var(--lm-surface-nav-bg),
+  $border-color: var(--lm-surface-nav-border),
+  $shadow: var(--lm-surface-nav-shadow),
+  $blur: var(--lm-blur-modal)
+) {
+  @include lm-glass($blur, $background, $border-color, $shadow);
+}
+
+/**
+ * 普通信息面板 surface
+ *
+ * 适合：
+ * 1. TOC
+ * 2. 文章卡片
+ * 3. 空状态
+ * 4. 侧边模块
+ */
+@mixin lm-surface-panel(
+  $background: var(--lm-surface-panel-bg),
+  $border-color: var(--lm-surface-panel-border),
+  $shadow: var(--lm-surface-panel-shadow),
+  $blur: var(--lm-blur-panel)
+) {
+  @include lm-glass($blur, $background, $border-color, $shadow);
+}
+
+/**
+ * 弹窗/抽屉 surface
+ *
+ * 这类容器需要比 panel 更强的“压背景”能力，
+ * 否则在高饱和随机图上会显得发飘。
+ */
+@mixin lm-surface-modal(
+  $background: var(--lm-surface-modal-bg),
+  $border-color: var(--lm-surface-modal-border),
+  $shadow: var(--lm-surface-modal-shadow),
+  $blur: var(--lm-blur-modal)
+) {
+  @include lm-glass($blur, $background, $border-color, $shadow);
+}
+
+/**
+ * 长文本阅读 surface
+ *
+ * 正文容器不应该和首页卡片使用同一配方。
+ * 这里刻意减弱透明感，优先保证连续阅读时的对比度稳定。
+ */
+@mixin lm-surface-reading {
+  background: var(--lm-surface-reading-bg);
+  border: 1px solid var(--lm-surface-reading-border);
+  box-shadow: var(--lm-surface-reading-shadow);
+}

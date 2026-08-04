@@ -1,0 +1,20 @@
+/**
+ * 玻璃态基础配方
+ *
+ * 只处理所有 glass surface 共有的四件事：
+ * 1. 背景色
+ * 2. 边框
+ * 3. 模糊
+ * 4. 阴影
+ */
+@mixin lm-glass(
+  $blur: var(--lm-blur-nav),
+  $background: var(--lm-c-bg-glass),
+  $border-color: var(--lm-c-border),
+  $shadow: var(--lm-shadow-glass)
+) {
+  background: $background;
+  border: 1px solid $border-color;
+  backdrop-filter: blur($blur);
+  box-shadow: $shadow;
+}
