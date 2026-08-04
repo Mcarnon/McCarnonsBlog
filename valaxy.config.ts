@@ -12,7 +12,7 @@ export default defineConfig<ThemeConfig>({
 
   themeConfig: {
     ui: {
-      primary: '#66CCFF',
+      primary: '#1E90FF',
     },
 
     // 背景图
@@ -21,35 +21,35 @@ export default defineConfig<ThemeConfig>({
       image: {
         light: '/images/background1.webp',
         dark: '/images/background2.webp',
-        urls: ['/images/background1.webp', '/images/background2.webp'],
-        apiUrls: [
-          // 'https://www.dmoe.cc/random.php',
-          'https://api.horosama.com/random.php',
-        ],
-        random: true,
-        overlayOpacity: 0.3,
+        // urls: ['/images/background1.webp', '/images/background2.webp'],
+        // apiUrls: [
+        //   // 'https://www.dmoe.cc/random.php',
+        //   'https://api.horosama.com/random.php',
+        // ],
+        // random: true,
+        overlayOpacity: 0.5,
       },
     },
 
     // 首屏
-    hero: {
-      mottoSource: 'hitokoto',
-      // motto: ['中文测试test', 'Welcome to Valaxy Theme Lolimeow', 'Test Long Long Long Long Long Long Long Long Long Long Long Long Text'],
-      hitokoto: {
-        showFrom: true,
-        sentenceTypes: ['a', 'b', 'c'],
-        maxLength: 30,
-      },
-      // cover: {
-      //   urls: ['/images/background1.webp', '/images/background2.webp'],
-      //   apiUrls: [
-      //     'https://www.loliapi.com/acg/?type=img',
-      //   ],
-      //   random: true,
-      //   fixed: false,
-      // },
-      typewriter: true,
-    },
+    // hero: {
+    //   mottoSource: 'hitokoto',
+    //   // motto: ['中文测试test', 'Welcome to Valaxy Theme Lolimeow', 'Test Long Long Long Long Long Long Long Long Long Long Long Long Text'],
+    //   hitokoto: {
+    //     showFrom: true,
+    //     sentenceTypes: ['a', 'b', 'c'],
+    //     maxLength: 30,
+    //   },
+    //   // cover: {
+    //   //   urls: ['/images/background1.webp', '/images/background2.webp'],
+    //   //   apiUrls: [
+    //   //     'https://www.loliapi.com/acg/?type=img',
+    //   //   ],
+    //   //   random: true,
+    //   //   fixed: false,
+    //   // },
+    //   typewriter: true,
+    // },
 
     // 导航栏
     navbar: [
@@ -62,7 +62,7 @@ export default defineConfig<ThemeConfig>({
       { text: '关于', link: '/about/', icon: 'i-ri-user-line' },
     ],
     navbarOptions: {
-      title: 'My Blog',
+      // title: 'My Blog',
       tools: ['toggleDark', 'search'],
       hamburgerStyle: 'classic',
     },
