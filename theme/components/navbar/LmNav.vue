@@ -21,9 +21,19 @@ const homeItem = computed(() => themeConfig.value.navbar.find(item => item.link 
   <nav
     class="lm-nav flex flex-col w-full transition-transform duration-250 ease-in-out relative"
   >
-    <!-- 移动端：保持原始样式 -->
+    <!-- 移动端：首页文字 + 工具 -->
     <div class="px-4 py-2 flex gap-3 w-full items-center sm:px-5 md:hidden">
-      <LmNavBrand />
+      <RouterLink
+        to="/"
+        class="lm-nav-home"
+      >
+        <span
+          v-if="homeItem?.icon"
+          class="lm-nav-home__icon"
+          :class="homeItem.icon"
+        />
+        <span>{{ homeItem?.text }}</span>
+      </RouterLink>
       <LmNavTools
         :drawer-open="props.drawerOpen"
         @open-search="emit('openSearch')"

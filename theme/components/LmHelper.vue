@@ -29,7 +29,7 @@ const scrollPercentage = computed(() => {
 const radius = 24
 const circumference = 2 * Math.PI * radius
 
-const strokeDashOffset = computed(() => {
+const strokeOffset = computed(() => {
   const offset = (1 - scrollPercentage.value) * circumference
   return offset < 0 ? 0 : offset
 })
@@ -68,7 +68,7 @@ function backToTop() {
           cy="28"
           :r="radius"
           :stroke-dasharray="`${circumference} ${circumference}`"
-          :stroke-dashoffset="strokeDashOffset"
+          :stroke-dashoffset="strokeOffset"
         />
       </svg>
 
@@ -79,7 +79,7 @@ function backToTop() {
 
 <style scoped lang="scss">
 .lm-back-to-top-stage {
-  @apply fixed bottom-6 right-6 z-[var(--lm-z-floating)];
+  @apply hidden fixed bottom-6 right-6 z-[var(--lm-z-floating)] md:block;
 }
 
 .lm-back-to-top {
