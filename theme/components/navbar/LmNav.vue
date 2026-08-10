@@ -21,19 +21,9 @@ const homeItem = computed(() => themeConfig.value.navbar.find(item => item.link 
   <nav
     class="lm-nav flex flex-col w-full transition-transform duration-250 ease-in-out relative"
   >
-    <!-- 移动端：首页文字 + 工具 -->
+    <!-- 移动端：品牌区 + 工具 -->
     <div class="px-4 py-3 flex gap-3 w-full items-center sm:px-5 md:hidden">
-      <RouterLink
-        to="/"
-        class="lm-nav-home"
-      >
-        <span
-          v-if="homeItem?.icon"
-          class="lm-nav-home__icon"
-          :class="homeItem.icon"
-        />
-        <span>{{ homeItem?.text }}</span>
-      </RouterLink>
+      <LmNavBrand />
       <LmNavTools
         :drawer-open="props.drawerOpen"
         @open-search="emit('openSearch')"
@@ -117,6 +107,10 @@ const homeItem = computed(() => themeConfig.value.navbar.find(item => item.link 
 }
 
 .lm-nav-desktop-hamburger-line {
-  @apply block h-[2px] origin-center rounded-full bg-[var(--lm-c-text-primary)] transition-all duration-250 ease-in-out;
+  @apply block h-[2px] w-4 origin-center rounded-full bg-[var(--lm-c-text-primary)] transition-all duration-250 ease-in-out;
+}
+
+.lm-nav-desktop-hamburger:hover .lm-nav-desktop-hamburger-line {
+  background-color: var(--lm-c-brand);
 }
 </style>

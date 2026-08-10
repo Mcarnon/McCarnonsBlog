@@ -181,7 +181,7 @@ export default defineConfig<ThemeConfig>({
     // 文章列表
     postList: {
       title: 'Discovery',
-      coverApiUrls: ['https://www.loliapi.com/acg/?type=img'],
+      coverApiUrls: [],
       coverRandom: true,
       showExcerpt: true,
       excerptLength: 140,
