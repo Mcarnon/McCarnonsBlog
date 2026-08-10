@@ -142,7 +142,7 @@ done
 ---
 ### 收尾工作
 
-最后把
+最后加上终端控制命令
 
 ``` wallpaper.sh
 #!/bin/bash
