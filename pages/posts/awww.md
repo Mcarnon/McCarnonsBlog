@@ -22,7 +22,7 @@ cover: /images/275.gif
 然后在桌面管理器的配置中启用awww并设置自启
 
 
-``` config.kdl
+```kdl
 // 动态壁纸
 spawn-at-startup "awww-daemon"
 
@@ -37,7 +37,7 @@ spawn-at-startup "dms" "run"
 
 写几个脚本控制轮换
 
-``` rotate.sh
+```sh
 #!/bin/bash
 
 WP_DIR="$HOME/Pictures/Wallpapers"
@@ -144,7 +144,7 @@ done
 
 最后加上终端控制命令
 
-``` wallpaper.sh
+```bash
 #!/bin/bash
 
 WP_DIR="$HOME/Pictures/Wallpapers"
@@ -205,4 +205,5 @@ esac
 ```
 
 ## 心得
-无
+
+且听下回分解：[mpvpaper](mpvpaper)

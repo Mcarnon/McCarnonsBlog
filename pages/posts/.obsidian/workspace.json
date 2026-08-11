@@ -83,8 +83,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 214.84765625
   },
   "right": {
     "id": "c3dab8fb5f15fb31",
@@ -190,5 +189,13 @@
     }
   },
   "active": "9f3c4f0029e859af",
-  "lastOpenFiles": []
+  "lastOpenFiles": [
+    "123.png",
+    "awww.md",
+    "mpvpaper.md",
+    "demo.md",
+    "id.md",
+    "Pasted image 20260811181109.png",
+    "未命名.base"
+  ]
 }
